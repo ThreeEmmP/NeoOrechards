@@ -1,0 +1,43 @@
+package net.threeemmp.neoorechards.blocks;
+
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.grower.TreeGrower;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.threeemmp.neoorechards.NeoOrechards;
+import net.threeemmp.neoorechards.defaults.DefaultOres;
+import net.threeemmp.neoorechards.items.ModItems;
+
+import java.util.function.Supplier;
+
+public class ModBlocks {
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NeoOrechards.MODID);
+
+    public static final DeferredBlock<Block> TEMPLATE_SAPLING = registerBlock(
+            "template_sapling",
+            () -> new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))
+    );
+
+    public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    public static void register(IEventBus eventBus) {
+        for(int i = 0;i < DefaultOres.ores.length; i++) {
+            ModBlocksGenerator.GenerateBlocks(DefaultOres.ores[i]);
+        }
+        BLOCKS.register(eventBus);
+    }
+}

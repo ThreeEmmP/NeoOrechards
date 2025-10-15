@@ -1,0 +1,11 @@
+{
+  "block.neoorechards.template_sapling": "Template Sapling",
+
+  "neoorechards.configuration.title": "NeoOrechards  Configs",
+  "neoorechards.configuration.section.neoorechards.common.toml": "NeoOrechards  Configs",
+  "neoorechards.configuration.section.neoorechards.common.toml.title": "NeoOrechards  Configs",
+  "neoorechards.configuration.items": "Item List",
+  "neoorechards.configuration.logDirtBlock": "Log Dirt Block",
+  "neoorechards.configuration.magicNumberIntroduction": "Magic Number Text",
+  "neoorechards.configuration.magicNumber": "Magic Number"
+}
