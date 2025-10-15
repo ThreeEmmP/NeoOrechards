@@ -11,8 +11,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.threeemmp.neoorechards.NeoOrechards;
-import net.threeemmp.neoorechards.defaults.DefaultOres;
+import net.threeemmp.neoorechards.generate.BlocksGenerator;
 import net.threeemmp.neoorechards.items.ModItems;
+import net.threeemmp.neoorechards.loaded.LoadedFields;
 
 import java.util.function.Supplier;
 
@@ -35,8 +36,8 @@ public class ModBlocks {
     }
 
     public static void register(IEventBus eventBus) {
-        for(int i = 0;i < DefaultOres.ores.length; i++) {
-            ModBlocksGenerator.GenerateBlocks(DefaultOres.ores[i]);
+        for (int i = 0; i < LoadedFields.customOres.length; i++) {
+            BlocksGenerator.GenerateBlocks(LoadedFields.customOres[i]);
         }
         BLOCKS.register(eventBus);
     }
