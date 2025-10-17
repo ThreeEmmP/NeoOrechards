@@ -1,7 +1,7 @@
 package net.threeemmp.neoorechards;
 
 import net.threeemmp.neoorechards.blocks.ModBlocks;
-import net.threeemmp.neoorechards.init.InitializeConfig;
+import net.threeemmp.neoorechards.init.InitializeGeneration;
 import net.threeemmp.neoorechards.items.ModItems;
 import org.slf4j.Logger;
 
@@ -35,7 +35,7 @@ public class NeoOrechards {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        InitializeConfig.init();
+        InitializeGeneration.initConfig();
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

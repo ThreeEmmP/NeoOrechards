@@ -14,9 +14,11 @@ public class FileReading {
             while (scanner.hasNextLine()) {
                 String currentLine = scanner.nextLine();
                 if (currentLine.contains(fieldName)) {
+                    scanner.close();
                     return true;
                 }
             }
+            scanner.close();
             return false;
         }
         catch (FileNotFoundException e) {
@@ -30,6 +32,7 @@ public class FileReading {
             while(scanner.hasNextLine()){
                 String currentLine = scanner.nextLine();
                 if (currentLine.contains(fieldName)) {
+                    scanner.close();
                     return StringManipulation.getStringArrayFromField(currentLine);
                 }
             }

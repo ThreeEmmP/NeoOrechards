@@ -1,18 +1,24 @@
 package net.threeemmp.neoorechards.init;
 
 import net.threeemmp.neoorechards.NeoOrechards;
+import net.threeemmp.neoorechards.generate.GenerateResourcePack;
 import net.threeemmp.neoorechards.loaded.LoadedFields;
 import net.threeemmp.neoorechards.defaults.DefaultConfig;
 import net.threeemmp.neoorechards.generate.GenerateConfig;
 import net.threeemmp.neoorechards.util.FileReading;
 
-public class InitializeConfig {
-    public static void init() {
+public class InitializeGeneration {
+    public static void initConfig() {
         if (!FileReading.doesConfigFileExist()) {
             GenerateConfig.generateDefaultConfig();
         }
         verifyFields();
         loadCustomFields();
+        GenerateResourcePack.initResourcePack();
+        for (int i = 0; i < LoadedFields.customOres.length; i++) {
+            GenerateResourcePack.generateResourcePack(LoadedFields.customOres[i]);
+        }
+
     }
 
     private static void verifyFields() {
