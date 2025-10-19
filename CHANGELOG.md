@@ -1,3 +1,5 @@
+## 3.1.0-alpha
+- All blocks can be generated now
 ## 3.0.0-alpha
 ![An image of all of the template items together](images/image1.png)
 - Added almost all the template items, which include

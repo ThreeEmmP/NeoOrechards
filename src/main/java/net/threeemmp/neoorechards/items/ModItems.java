@@ -5,6 +5,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.threeemmp.neoorechards.NeoOrechards;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.threeemmp.neoorechards.generate.ItemsGenerator;
+import net.threeemmp.neoorechards.loaded.LoadedFields;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NeoOrechards.MODID);
@@ -25,6 +27,9 @@ public class ModItems {
     );
 
     public static void register(IEventBus eventBus) {
+        for (int i = 0; i < LoadedFields.customOres.length; i++) {
+            ItemsGenerator.generateItems(LoadedFields.customOres[i]);
+        }
         ITEMS.register(eventBus);
     }
 }
