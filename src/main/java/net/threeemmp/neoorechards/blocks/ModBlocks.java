@@ -1,5 +1,7 @@
 package net.threeemmp.neoorechards.blocks;
 
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -19,14 +21,21 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(NeoOrechards.MODID);
 
     public static final DeferredBlock<Block> TEMPLATE_AMBER = registerBlock(
-      "template_amber",
+            "template_amber",
             () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS))
     );
     public static final DeferredBlock<Block> TEMPLATE_SAPLING = registerBlock(
             "template_sapling",
             () -> new SaplingBlock(TreeGrower.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))
     );
-
+    public static final DeferredBlock<Block> TEMPLATE_ORE_LOG = registerBlock(
+            "template_ore_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
+    );
+    public static final DeferredBlock<Block> TEMPLATE_ORE_LEAVES = registerBlock(
+            "template_ore_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+    );
     public static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

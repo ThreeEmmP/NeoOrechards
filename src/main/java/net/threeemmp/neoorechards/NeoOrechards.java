@@ -1,6 +1,7 @@
 package net.threeemmp.neoorechards;
 
 import net.threeemmp.neoorechards.blocks.ModBlocks;
+import net.threeemmp.neoorechards.creativetab.ModCreativeTab;
 import net.threeemmp.neoorechards.init.InitializeGeneration;
 import net.threeemmp.neoorechards.items.ModItems;
 import org.slf4j.Logger;
@@ -35,6 +36,7 @@ public class NeoOrechards {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeTab.register(modEventBus);
         InitializeGeneration.initConfig();
 
         ModItems.register(modEventBus);
@@ -51,7 +53,15 @@ public class NeoOrechards {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == ModCreativeTab.NEOORECHARDS_TEMPLATES) {
+            event.accept(ModBlocks.TEMPLATE_AMBER);
+            event.accept(ModBlocks.TEMPLATE_SAPLING);
+            event.accept(ModBlocks.TEMPLATE_ORE_LOG);
+            event.accept(ModBlocks.TEMPLATE_ORE_LEAVES);
+            event.accept(ModItems.TEMPLATE_ACORN);
+            event.accept(ModItems.TEMPLATE_ROASTED_ACORN);
+            event.accept(ModItems.TEMPLATE_RESIN);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

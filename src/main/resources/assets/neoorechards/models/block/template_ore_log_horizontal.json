@@ -1,0 +1,10 @@
+
+{
+  "parent": "neoorechards:block/cube_column_horizontal_overlay",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "end": "minecraft:block/oak_log_top",
+    "side": "minecraft:block/oak_log",
+    "overlay": "neoorechards:block/template_ore_overlay"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "neoorechards:item/template_roasted_acorn"
+  }
+}

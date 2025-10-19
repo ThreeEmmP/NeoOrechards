@@ -1,0 +1,12 @@
+{
+  "parent": "neoorechards:block/cube_overlay",
+  "textures": {
+    "particle": "#side",
+    "down": "#end",
+    "up": "#end",
+    "north": "#side",
+    "east": "#side",
+    "south": "#side",
+    "west": "#side"
+  }
+}

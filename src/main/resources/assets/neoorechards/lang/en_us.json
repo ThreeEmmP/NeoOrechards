@@ -1,3 +1,12 @@
 {
-  "block.neoorechards.template_sapling": "Template Sapling"
+  "block.neoorechards.template_sapling": "Template Sapling",
+  "block.neoorechards.template_amber": "Template Amber",
+  "block.neoorechards.template_ore_log": "Template Ore Log",
+  "block.neoorechards.template_ore_leaves": "Template Ore Leaves",
+
+  "item.neoorechards.template_roasted_acorn": "Template Roasted Acorn",
+  "item.neoorechards.template_acorn": "Template Acorn",
+  "item.neoorechards.template_resin": "Template Resin",
+
+  "creativetab.neoorechards.neoorechards_templates": "Neoorechards Templates"
 }
